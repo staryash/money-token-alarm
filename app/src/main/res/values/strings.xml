@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MoneyAlarmV3</string>
+    <string name="create_btn_label">Create</string>
+    <string name="hrs_label">Hrs(24hrs format)</string>
+    <string name="min_label">Min</string>
+    <string name="edit_button_label">Edit/Delete</string>
+    <string name="buy_button_label">Buy Token</string>
+    <string name="consume_button_label">Consume Token</string>
+    <string name="token_number_label">No of tokens</string>
+</resources>
