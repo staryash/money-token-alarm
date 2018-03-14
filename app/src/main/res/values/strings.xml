@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">MoneyAlarmV3</string>
+
+    <!--main activity-->
     <string name="create_btn_label">Create</string>
     <string name="hrs_label">Hrs(24hrs format)</string>
     <string name="min_label">Min</string>
@@ -7,4 +9,9 @@
     <string name="buy_button_label">Buy Token</string>
     <string name="consume_button_label">Consume Token</string>
     <string name="token_number_label">No of tokens</string>
+
+    <!--alarm reciever activity-->
+    <string name="alarm_label">Whose phone is ringing MINE!! MINE!!</string>
+    <string name="stop_btn_label">Stop!!</string>
+    <string name="snooze_btn_label">leme sleep zz</string>
 </resources>

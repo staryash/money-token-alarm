@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences alarmPref;
     SharedPreferences.Editor prefEditor;
     TextView tokenNoView;
-    private static TextView alarmMessageBox;
     //problem hai?
 
     @Override
@@ -27,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
         tokenNoView = (TextView)findViewById(R.id.tokenNoDisplay);
         tokenNoView.setText(String.valueOf(getToken()));
-        alarmMessageBox =(TextView)findViewById(R.id.alarmMessageBox);
     }
 
     void increaseToken(View view) {
@@ -69,12 +67,9 @@ public class MainActivity extends AppCompatActivity {
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, 0, pendingIntent);
 
     }
-    public static TextView alarmMessage(){
-        return alarmMessageBox;
-    }
 
     void deleteAlarm(View view){
-        
+
     }
 
 

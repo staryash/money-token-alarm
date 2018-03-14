@@ -11,9 +11,12 @@ import android.support.v4.content.WakefulBroadcastReceiver;
 public class AlarmReceiver extends WakefulBroadcastReceiver {
     @Override
     public void onReceive(final Context context, Intent intent) {
-        MainActivity.alarmMessage().setText("Uth ja aalsi");
         Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
         Ringtone ringtone = RingtoneManager.getRingtone(context, uri);
         ringtone.play();
+
+        Intent AlarmDisplayIntent = new Intent(context, AlarmReceiverActivity.class);
+        context.startActivity(AlarmDisplayIntent);
+
     }
 }
