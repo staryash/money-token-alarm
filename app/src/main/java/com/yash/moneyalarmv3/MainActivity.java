@@ -1,5 +1,6 @@
 package com.yash.moneyalarmv3;
 
+import java.util.Calendar;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -53,10 +54,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void createAlarm(View view){
+        //taking time inputs
         EditText hrsInput = (EditText)findViewById(R.id.hrsInput);
         EditText minInput = (EditText)findViewById(R.id.minInput);
-        int hrs = Integer.parseInt(hrsInput.getText().toString());
-        int min = Integer.parseInt(minInput.getText().toString());
+        int hrs = Integer.parseInt(hrsInput.getText().toString())%24;
+        int min = Integer.parseInt(minInput.getText().toString())%60;
+        Calendar alarmTime = Calendar.getInstance();
+        alarmTime.set(Calendar.HOUR_OF_DAY, hrs);
+        alarmTime.set(Calendar.MINUTE, min);
 
         Toast.makeText(this,"creating alarm for "+hrs+":"+min,Toast.LENGTH_LONG).show();
 
@@ -64,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         Intent myIntent = new Intent(MainActivity.this, AlarmReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, myIntent, 0);
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, 0, pendingIntent);
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, alarmTime.getTimeInMillis(), pendingIntent);
 
     }
 
